@@ -1,6 +1,12 @@
 #include "eprintf.h"
 #include <stdio.h>
 
+int match(char *regexp, char *text);
+int matchhere(char *regexp, char *text);
+int matchstar(int c, char *regexp, char *text);
+int grep(char *regexp, FILE *f, char *name);
+
+
 int match(char *regexp, char *text)
 {
 	if (regexp[0] == '^')
@@ -74,7 +80,7 @@ int main(int argc, char *argv[])
 				weprintf("can't open %s:", argv[i]);
 				continue;
 			}
-			if (grep(argv[i], f, argc > 3 ? argv[i] : NULL) > 0)
+			if (grep(argv[1], f, argc > 3 ? argv[i] : NULL) > 0)
 				nmatch++;
 			fclose(f);
 		}
