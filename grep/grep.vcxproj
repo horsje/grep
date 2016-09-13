@@ -146,6 +146,7 @@
     <ClCompile Include="eprintf.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
     </ClCompile>
+    <ClCompile Include="grep.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="eprintf.h" />
